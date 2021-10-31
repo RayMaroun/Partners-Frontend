@@ -11,6 +11,10 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 - [Jasmine](http://jasmine.github.io/)
 - [Karma Test Runner](http://karma-runner.github.io/0.8/index.html)
 
+## Docker
+
+- [Partners API Container](https://hub.docker.com/r/raymaroun/partners-frontend)
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
@@ -30,6 +34,9 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 
 Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
+### Future work
+
+> Get partners list based on given coordinates by the user.
 
 ## Further help
 
