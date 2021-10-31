@@ -1,0 +1,51 @@
+<div class="jumbotron py-3">
+    <h1 class="display-4 text-center">Partner Management</h1>
+</div>
+
+<form novalidate autocomplete="off" #form="ngForm">
+    <input type="hidden" name="id" [value]="service.formData.id" />
+
+    <div class="form-group">
+        <label><b>Organization Name</b></label>
+        <input class="form-control form-control-lg" [readonly]="true" placeholder="Organization" name="organization"
+            #organization="ngModel" [(ngModel)]="service.formData.organization" required
+            [class.invalid]="organization.invalid && organization.touched">
+    </div>
+
+    <div class="form-group">
+        <label><b>Website</b></label>
+        <a class="form-control form-control-lg" href="{{service.formData.website}}" target="_blank" placeholder="No Website Available" name="website"
+        ngDefaultControl [(ngModel)]="service.formData.website" required
+            >
+            {{service.formData.website ? service.formData.website : 'No Website Found'}}</a>
+    </div>
+
+    <div class="form-group">
+        <label><b>Services</b></label>
+        <textarea rows="4" class="form-control form-control-lg" [readonly]="true" placeholder="Services" name="services"
+            #services="ngModel" [(ngModel)]="service.formData.services" required
+            [class.invalid]="services.invalid && services.touched">
+            </textarea>
+    </div>
+    <label><b>Offices</b></label>
+    <div>
+
+        <div>
+            <table class="table table-striped">
+                <thead class="thead-light">
+                    <tr>
+                        <th>Location</th>
+                        <th>Address</th>
+                        <th style="width: 10%"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let office of service.formData.offices">
+                        <td>{{office.location}}</td>
+                        <td>{{office.address}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</form>
